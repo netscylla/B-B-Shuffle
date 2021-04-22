@@ -155,7 +155,7 @@ li {
   }
 }
 
-#mydiv, #injectdiv{
+#mydiv, #injectdiv, #gmnotes{
   position: absolute;
   z-index: 9;
   background-color: #f1f1f1;
@@ -168,8 +168,14 @@ li {
   left:300px; top:823px;
 }
 
+#gmnotes
+{
+  left:620px; top:823;
+}
+
 #injectdiv h1 { margin:0px; }
 #mydiv h1 { margin:0px; }
+#gmnotes h1 { margin:0px; }
 
 #mydivheader {
   padding: 10px;
@@ -187,6 +193,15 @@ li {
   color: #fff;
 }
 
+#gmnotesheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+#gmnotes textarea { font-size:30px; }
 
 .establishedprocs
 {

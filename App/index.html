@@ -9,9 +9,12 @@
   </head>
 <div id="viewrec">  
  Best viewed at 1920x1080
+ <br> 
 </div>
 <div id="solution">
-<a onclick="solutiontoggle()"> SHOW SOLUTION (DM ONLY)</a>
+  DM Controls:
+  <button onClick='window.location.href=window.location.href'>Reset Session</button>
+  <button onclick="solutiontoggle()"> SHOW SOLUTION</button>
   <div id="dm_solution" style="display:none;">
     
   </div>
@@ -248,6 +251,21 @@ Other Procedures: <span id="button2"><input type="button" onclick="roll_dice(0)"
 
       <div id="endgame"></div>
 </div>
+
+<!-- GM Notes -->
+
+<div id="gmnotes">
+  <div id="gmnotesheader">
+    <header>
+    <h1 tabindex="0" >GAME NOTES</h1></header></div>
+    <hr>
+    <textarea id="notes" rows="4" cols="24">Use this space for notes (permanent modifiers, etc)...
+  </textarea>
+
+      <div id="endgame"></div>
+</div>
+
+
 <!-- COUNTERS -->
 <div id="counter1" class="counter">1</div>
 <div id="counter2" class="counter">2</div>
@@ -320,6 +338,7 @@ Other Procedures: <span id="button2"><input type="button" onclick="roll_dice(0)"
       // Make the DIV element draggable:
 dragElement(document.getElementById("injectdiv"));
 dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("gmnotes"));
 dragElement(document.getElementById("counter1"));
 dragElement(document.getElementById("counter2"));
 dragElement(document.getElementById("counter3"));
