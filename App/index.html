@@ -12,11 +12,12 @@
  <br> 
 </div>
 <div id="solution">
-  DM Controls:
-  <button onclick="notestoggle()"> SHOW NOTES</button>
+  DM Controls/Toggles:
+  <button onclick="injectstoggle()"> Injects</button>
+  <button onclick="notestoggle()"> Notes</button>
   <button onClick='window.location.href=window.location.href'>New Session</button>
   <button onclick="flipBack()"> Reset Cards</button>
-  <button onclick="solutiontoggle()"> SHOW SOLUTION</button>
+  <button onclick="solutiontoggle()"> Solution</button>
   <div id="dm_solution" style="display:none;">
     
   </div>
@@ -446,6 +447,15 @@ function solutiontoggle() {
 
 function notestoggle() {
   var x = document.getElementById("gmnotes");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function injectstoggle() {
+  var x = document.getElementById("injectdiv");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {

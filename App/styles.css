@@ -165,12 +165,13 @@ li {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 #injectdiv{
-  left:300px; top:823px;
+  left:300px; top:800px;
+  display:none;
 }
 
 #gmnotes
 {
-  left:620px; top:823;
+  left:620px; top:800px;
   position: absolute;
   z-index: 9;
   background-color: #ffe6a8;
