@@ -257,6 +257,15 @@ margin-bottom:5px;
 width:300px;
 }
 
+.otherprocs .procimg
+{
+width:250px;
+}
+.otherprocs .proc
+{
+  height:125px;
+}
+
 #dice
 {
   background-image: url(img/d20-back.png);
