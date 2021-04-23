@@ -22,8 +22,10 @@
 
   <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2/Screenshots/dmcontrols--2.0.png">
   
-  - Added a Reset Session Button and a NOTES hover box
-  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2/Screenshots/notes-2.0.png"> 
+  - Added a New Session Button
+  - Added a Reset Cards Button to flip scenarios back over if they were inadvertently flipped.
+  - Added NOTES hover box:
+    - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2/Screenshots/notes-2.0.png"> 
     - Notes are a good way to keep track of permanent modifiers. e.g. "+3 for all SIEM-related activity for rest of game" 
   
 - UPDATED CARDLIST
