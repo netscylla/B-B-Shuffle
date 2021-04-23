@@ -9,3 +9,4 @@
 - X Tokens
 - DM CONTROLS
 - UPDATED CARDLIST
+  - via Google Sheets - [Card List](https://docs.google.com/spreadsheets/d/1RNBFr4o9OPYWwR7mxdadHQwxRayylZewcphdS3K6-og/edit?usp=sharing)
