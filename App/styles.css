@@ -155,7 +155,7 @@ li {
   }
 }
 
-#mydiv, #injectdiv, #gmnotes{
+#mydiv, #injectdiv {
   position: absolute;
   z-index: 9;
   background-color: #f1f1f1;
@@ -171,6 +171,13 @@ li {
 #gmnotes
 {
   left:620px; top:823;
+  position: absolute;
+  z-index: 9;
+  background-color: #ffe6a8;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  display:none;
 }
 
 #injectdiv h1 { margin:0px; }
@@ -197,11 +204,11 @@ li {
   padding: 10px;
   cursor: move;
   z-index: 10;
-  background-color: #2196F3;
+  background-color: #634e18;
   color: #fff;
 }
 
-#gmnotes textarea { font-size:30px; }
+#gmnotes textarea { font-size:30px; background-color:#ffe6a8;}
 
 .establishedprocs
 {
@@ -307,10 +314,33 @@ width: 75px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 
+#hold1, #hold2, #hold3 {
+width: 75px;
+    height: 75px;
+    position: absolute;
+  z-index: 6;
+  /*background-image: url(img/clock.png);*/
+  background-color: #AA1122;
+  background-repeat: no-repeat;
+  border: 5px dashed #000;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    top:925px;
+    left:520px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+}
 .counter
 {
   text-align: center;
   font-size:50px;
   vertical-align:middle;
   line-height:75px;
+}
+.xcounter
+{
+  text-align: center;
+  font-size:50px;
+  vertical-align:middle;
+  line-height:60px;
 }
