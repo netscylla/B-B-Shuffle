@@ -155,7 +155,7 @@ li {
   }
 }
 
-#mydiv, #injectdiv {
+#mydiv, #injectdiv, #consultantdiv {
   position: absolute;
   z-index: 9;
   background-color: #f1f1f1;
@@ -167,11 +167,17 @@ li {
 #injectdiv{
   left:300px; top:800px;
   display:none;
+  min-width: 285px;
+}
+
+#consultantdiv{
+  left:600px; top:800px;
+  display:none;
 }
 
 #gmnotes
 {
-  left:620px; top:800px;
+  left:1000px; top:800px;
   position: absolute;
   z-index: 9;
   background-color: #ffe6a8;
@@ -182,6 +188,7 @@ li {
 }
 
 #injectdiv h1 { margin:0px; }
+#consultantdiv h1 { margin:0px; }
 #mydiv h1 { margin:0px; }
 #gmnotes h1 { margin:0px; }
 
@@ -194,6 +201,14 @@ li {
 }
 
 #injectdivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #EEEEEE;
+  color: #fff;
+}
+
+#consultantdivheader {
   padding: 10px;
   cursor: move;
   z-index: 10;
@@ -235,12 +250,13 @@ margin-bottom:5px;
 { background-color: #FF0000; padding: 5px 0 5px 0;
   margin-bottom:5px;
 }
-.inject
+.inject, .consultant
 {
   padding: 5px 0 5px 0;
   margin-bottom:5px;
 }
 .inject img { height:300px; }
+.consultant img { height:300px; }
 
 .proc
 {
@@ -320,7 +336,7 @@ width: 75px;
     -webkit-border-radius: 60px;
     border-radius: 60px;
     top:825px;
-    left:520px;
+    left:900px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 
@@ -337,7 +353,7 @@ width: 75px;
     -webkit-border-radius: 60px;
     border-radius: 60px;
     top:925px;
-    left:520px;
+    left:900px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 .counter

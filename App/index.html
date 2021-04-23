@@ -14,6 +14,7 @@
 <div id="solution">
   DM Controls/Toggles:
   <button onclick="injectstoggle()"> Injects</button>
+  <button onclick="consultantstoggle()"> Consultants</button>
   <button onclick="notestoggle()"> Notes</button>
   <button onClick='window.location.href=window.location.href'>New Session</button>
   <button onclick="flipBack()"> Reset Cards</button>
@@ -104,6 +105,24 @@ Other Procedures:
     </div>
 </div>
 
+<!--Consultant BOX-->
+<div id="consultantdiv">
+    <div id="consultantdivheader">
+    <header>
+      <h1 tabindex="0" id="title">CONSULTANTS</h1></header>
+    </div>
+    <div id="something"></div>
+    <input type="button" onclick="update_con()" value="DRAW CONSULTANT"/>
+    <input type="button" onclick="rem_con()" value="CLEAR"/>
+    <div >
+        <div  id="f">
+            <img style="width:200px;" src="img/bb-back-consultant.png">
+        </div>
+    </div>
+</div>
+
+
+
     <!-- FLIP SCRIPT-->
     <script type="text/javascript" src="script.js"></script>
 
@@ -187,6 +206,18 @@ Other Procedures:
             "<div class='inject'><a href='img/v2/BNB_CARDS_v2_INJ-9.png' data-lightbox='inject9'><img src='img/v2/BNB_CARDS_v2_INJ-9.png'></a></div>"
         ]
 
+        var con = [
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-1.png' data-lightbox='consultant1'><img src='img/expansion1/BNB_CARDS_EXP01_CON-1.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-2.png' data-lightbox='consultant2'><img src='img/expansion1/BNB_CARDS_EXP01_CON-2.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-3.png' data-lightbox='consultant3'><img src='img/expansion1/BNB_CARDS_EXP01_CON-3.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-4.png' data-lightbox='consultant4'><img src='img/expansion1/BNB_CARDS_EXP01_CON-4.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-5.png' data-lightbox='consultant5'><img src='img/expansion1/BNB_CARDS_EXP01_CON-5.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-6.png' data-lightbox='consultant6'><img src='img/expansion1/BNB_CARDS_EXP01_CON-6.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-7.png' data-lightbox='consultant7'><img src='img/expansion1/BNB_CARDS_EXP01_CON-7.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-8.png' data-lightbox='consultant8'><img src='img/expansion1/BNB_CARDS_EXP01_CON-8.png'></a></div>",
+            "<div class='consultant'><a href='img/expansion1/BNB_CARDS_EXP01_CON-9.png' data-lightbox='consultant9'><img src='img/expansion1/BNB_CARDS_EXP01_CON-9.png'></a></div>"
+        ]
+
         shuffle(proc);
         document.getElementById("output").innerHTML = proc.slice(0, 4).join("");
         document.getElementById("remainder").innerHTML = proc.slice(4, 11).join("");
@@ -211,7 +242,7 @@ Other Procedures:
         document.getElementById("d").innerHTML = persist.slice(0,1);
         document.getElementById("dm_solution").innerHTML += persist.slice(0,1);
 
-
+        //INJECTS
         shuffle(ins);
         
         s = 0
@@ -224,12 +255,29 @@ Other Procedures:
               {s = 0; t = 1;}
         }
 
+        //CONSULTANTS
+        shuffle(con);
+        
+        u = 0
+        v = 1
+        function update_con() {
+              document.getElementById("f").innerHTML = con.slice(u,v);
+            u++
+            v++
+            if (v==con.length+1)
+              {u = 0; v = 1;}
+        }
+
     </script>
 
 <!-- INSERT RESET BUTTON -->
     <script>
       function rem_ins() {
               document.getElementById("e").innerHTML = "<img style='width:200px;'' src='img/bb-back-inject.png'>";
+          
+        }
+      function rem_con() {
+              document.getElementById("f").innerHTML = "<img style='width:200px;'' src='img/bb-back-consultant.png'>";
           
         }
     </script>
@@ -386,6 +434,7 @@ Other Procedures:
 <script>
       // Make the DIV element draggable:
 dragElement(document.getElementById("injectdiv"));
+dragElement(document.getElementById("consultantdiv"));
 dragElement(document.getElementById("mydiv"));
 dragElement(document.getElementById("gmnotes"));
 dragElement(document.getElementById("counter1"));
@@ -436,6 +485,8 @@ function dragElement(elmnt) {
   }
 }
 
+//TOGGLE FUNCTIONS
+
 function solutiontoggle() {
   var x = document.getElementById("dm_solution");
   if (x.style.display === "block") {
@@ -456,6 +507,15 @@ function notestoggle() {
 
 function injectstoggle() {
   var x = document.getElementById("injectdiv");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function consultantstoggle() {
+  var x = document.getElementById("consultantdiv");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
