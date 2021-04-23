@@ -155,7 +155,7 @@ li {
   }
 }
 
-#mydiv, #injectdiv, #consultantdiv {
+#mydiv, #injectdiv, #consultantdiv, #dicebox {
   position: absolute;
   z-index: 9;
   background-color: #f1f1f1;
@@ -187,12 +187,27 @@ li {
   display:none;
 }
 
+#dicebox{
+  right:20px;
+  display:none;
+  width:150px;
+}
+
 #injectdiv h1 { margin:0px; }
 #consultantdiv h1 { margin:0px; }
 #mydiv h1 { margin:0px; }
 #gmnotes h1 { margin:0px; }
+#dicebox h1 {margin:0px;}
 
 #mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+#diceboxheader {
   padding: 10px;
   cursor: move;
   z-index: 10;
@@ -283,7 +298,7 @@ width:250px;
   height:125px;
 }
 
-#dice
+#dice, #d20
 {
   background-image: url(img/d20-back.png);
   background-size: contain;

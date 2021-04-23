@@ -8,7 +8,7 @@ Dashboard for conducting [Backdoors & Breaches](https://www.blackhillsinfosec.co
 
 Backdoors & Breaches is the property of [Black Hills InfoSec](https://www.blackhillsinfosec.com/). It is a great tool for conducting incident response walkthroughs and training seminars.
 
-# Version 2.0 Updates
+# Version 2.0+EXPANSION Updates
 - View [Changelog](https://github.com/p3hndrx/B-B-Shuffle/blob/V2/ChangeLog.md)
 
 # About This Script

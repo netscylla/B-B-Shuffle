@@ -1,5 +1,5 @@
 <head>
-<title>B&B Shuffle v2.0</title>
+<title>B&B Shuffle v2.0+EXPANSION</title>
 <link rel="stylesheet" href="styles.css" >
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -13,9 +13,12 @@
 </div>
 <div id="solution">
   DM Controls/Toggles:
+  <button onclick="diceboxtoggle()"> D20</button>
+  |
   <button onclick="injectstoggle()"> Injects</button>
   <button onclick="consultantstoggle()"> Consultants</button>
   <button onclick="notestoggle()"> Notes</button>
+  |
   <button onClick='window.location.href=window.location.href'>New Session</button>
   <button onclick="flipBack()"> Reset Cards</button>
   <button onclick="solutiontoggle()"> Solution</button>
@@ -147,7 +150,8 @@ Other Procedures:
             "<div class='proc'><a href='img/v2/BNB_CARDS_v2_PRO-8.png' data-lightbox='procedure8'><img class='procimg' src='img/v2/BNB_CARDS_v2_PRO-8.png'></a></div>",
             "<div class='proc'><a href='img/v2/BNB_CARDS_v2_PRO-9.png' data-lightbox='procedure9'><img class='procimg' src='img/v2/BNB_CARDS_v2_PRO-9.png'></a></div>",
             "<div class='proc'><a href='img/v2/BNB_CARDS_v2_PRO-10.png' data-lightbox='procedure10'><img class='procimg' src='img/v2/BNB_CARDS_v2_PRO-10.png'></a></div>",
-            "<div class='proc'><a href='img/v2/BNB_CARDS_v2_PRO-11.png' data-lightbox='procedure11'><img class='procimg' src='img/v2/BNB_CARDS_v2_PRO-11.png'></a></div>"
+            "<div class='proc'><a href='img/v2/BNB_CARDS_v2_PRO-11.png' data-lightbox='procedure11'><img class='procimg' src='img/v2/BNB_CARDS_v2_PRO-11.png'></a></div>",
+            "<div class='proc'><a href='img/expansion1/BNB_CARDS_EXP01_PRO-1.png' data-lightbox='procedure12'><img class='procimg' src='img/expansion1/BNB_CARDS_EXP01_PRO-1.png'></a></div>"
         ]
 
         var init = [
@@ -160,7 +164,10 @@ Other Procedures:
             "<a href='img/v2/BNB_CARDS_v2_IC-7.png' data-lightbox='initial7'><img class='scenimg' src='img/v2/BNB_CARDS_v2_IC-7.png'></a>",
             "<a href='img/v2/BNB_CARDS_v2_IC-8.png' data-lightbox='initial8'><img class='scenimg' src='img/v2/BNB_CARDS_v2_IC-8.png'></a>",
             "<a href='img/v2/BNB_CARDS_v2_IC-9.png' data-lightbox='initial9'><img class='scenimg' src='img/v2/BNB_CARDS_v2_IC-9.png'></a>",
-            "<a href='img/v2/BNB_CARDS_v2_IC-10.png' data-lightbox='initial10'><img class='scenimg' src='img/v2/BNB_CARDS_v2_IC-10.png'></a>"
+            "<a href='img/v2/BNB_CARDS_v2_IC-10.png' data-lightbox='initial10'><img class='scenimg' src='img/v2/BNB_CARDS_v2_IC-10.png'></a>",
+            "<a href='img/expansion1/BNB_CARDS_EXP01_IC-1.png' data-lightbox='initial11'><img class='scenimg' src='img/expansion1/BNB_CARDS_EXP01_IC-1.png'></a>",
+            "<a href='img/expansion1/BNB_CARDS_EXP01_IC-2.png' data-lightbox='initial12'><img class='scenimg' src='img/expansion1/BNB_CARDS_EXP01_IC-2.png'></a>",
+            "<a href='img/expansion1/BNB_CARDS_EXP01_IC-3.png' data-lightbox='initial13'><img class='scenimg' src='img/expansion1/BNB_CARDS_EXP01_IC-3.png'></a>"
         ]
 
         var pivot = [
@@ -284,7 +291,7 @@ Other Procedures:
 
 <hr>
 
-<!-- Dice Box -->
+<!-- Game Progress -->
 <div id="mydiv">
   <div id="mydivheader">
     <header>
@@ -306,6 +313,21 @@ Other Procedures:
       </div>
 
       <div id="endgame"></div>
+</div>
+
+<!-- Game Progress -->
+<div id="dicebox">
+  <div id="diceboxheader">
+    <header>
+    <h1 tabindex="0" >DiceBox</h1></header></div>
+          <span id="button"><input type="button" onclick="roll_d20(0)" value="Roll D20"/></span>
+          <span id="button3"></span>
+    <div class="dice" id="dice_box">
+        <div id="d20">
+
+        </div>
+        
+    </div>
 </div>
 
 <!-- GM Notes -->
@@ -397,6 +419,11 @@ Other Procedures:
                 document.getElementById("turn").innerHTML = turn;
               }
         }
+      function roll_d20() {
+        var roll = 1 + Math.floor(Math.random()*20)
+              document.getElementById("d20").innerHTML = "ROLL VALUE: <br><div class='big_num'>" + roll + "</div>";
+        }
+
       function addturn() {
         turn++;
         document.getElementById("dice").innerHTML = "";
@@ -486,6 +513,15 @@ function dragElement(elmnt) {
 }
 
 //TOGGLE FUNCTIONS
+
+function diceboxtoggle() {
+  var x = document.getElementById("dicebox");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
 function solutiontoggle() {
   var x = document.getElementById("dm_solution");
