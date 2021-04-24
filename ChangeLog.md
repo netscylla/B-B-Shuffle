@@ -3,6 +3,28 @@
      alt="BackDoors & Breaches"
      style="float: left; margin-right: 10px;" />
 
+# B&B EXPANSION 1.0
+- Added Support Consultants
+
+<img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/consultant-draw.png" width="250px"
+     alt="Dashboard"
+     style="float: left; margin-right: 10px;" />
+<img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/consultant-open.png" width="250px"
+     alt="Dashboard"
+     style="float: left; margin-right: 10px;" />
+
+- Added a generic D20 for cards that ask for that
+
+<img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/dicebox.png?raw=true">
+
+- Added support for Add-On Scenario
+  - Addressed complicated issue of "hacky" and "no good deed"
+  - To activate, click the Add-On Scenario button on the DM Toolbar
+  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/dmcontrols--exp.png">
+  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-controls.png">
+  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-window.png">
+  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-solution.png">
+
 # VERSION 2.0
 
 - GAME PROGRESS
