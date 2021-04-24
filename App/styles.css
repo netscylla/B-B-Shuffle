@@ -18,6 +18,11 @@ border-radius: 16px;
   padding:10px;
 
 }
+
+#scenario button {
+  margin:0 0 10px 0;
+}
+
 #viewrec
 {
 z-index:99;
@@ -42,6 +47,9 @@ max-width:250px;
   display: block;
   text-align: center;
 }
+
+/*CARD STYLES*/
+
 .cards {
   display: flex;
   flex-direction: column;
@@ -154,6 +162,8 @@ li {
     max-width:380px;
   }
 }
+
+/*CONTROL BOXES*/
 
 #mydiv, #injectdiv, #consultantdiv, #dicebox {
   position: absolute;
@@ -291,7 +301,7 @@ width:300px;
 
 .otherprocs .procimg
 {
-width:250px;
+width:220px;
 }
 .otherprocs .proc
 {
@@ -385,3 +395,5 @@ width: 75px;
   vertical-align:middle;
   line-height:60px;
 }
+
+

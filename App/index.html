@@ -1,6 +1,7 @@
 <head>
 <title>B&B Shuffle v2.0+EXPANSION</title>
 <link rel="stylesheet" href="styles.css" >
+<link rel="stylesheet" href="expstyles.css" >
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -14,16 +15,23 @@
 <div id="solution">
   DM Controls/Toggles:
   <button onclick="diceboxtoggle()"> D20</button>
+  <button onclick="notestoggle()"> Notes</button>
   |
   <button onclick="injectstoggle()"> Injects</button>
   <button onclick="consultantstoggle()"> Consultants</button>
-  <button onclick="notestoggle()"> Notes</button>
+  <button onclick="scenariotoggle()">Add-On Scenario</button>
   |
   <button onClick='window.location.href=window.location.href'>New Session</button>
-  <button onclick="flipBack()"> Reset Cards</button>
+  <button onclick="flipBack()"> Flip Scenario Cards</button>
   <button onclick="solutiontoggle()"> Solution</button>
+  <button onclick="addonsolutiontoggle()">Add-On Solution</button>
   <div id="dm_solution" style="display:none;">
-    
+  </div>
+  <div id="dm_addonsolution" style="display:none;">
+        <div class="addonsol" id="solIC"></div>
+        <div class="addonsol" id="solPE"></div>
+        <div class="addonsol" id="solCE"></div>
+        <div class="addonsol" id="solPER"></div>
   </div>
 </div>
 
@@ -31,8 +39,6 @@
 <header>
 <h1 tabindex="0" id="title">SCENARIO</h1></header>
     <section class="cards">
-
-      
 
       <div class="cards__single">
         <div class="cards__front">
@@ -73,11 +79,31 @@
           </div>
         </div>
       </div>
-
 <br>
-
-
     </section>
+<div style="clear:both;"></div>
+<!--EXPANSION SCENARIO ADDONS-->
+<div id="scenario">
+  <div id="scenarioheader">
+    <header>
+      <h1 tabindex="0" id="title">ADD-ON SCENARIO</h1></header>
+    </div>
+        <button id="buttIC" onclick="addIC()"> Add Initial Compromise</button>
+        <button id="buttPE" onclick="addPE()"> Add Pivot & Escalate</button>
+        <button id="buttCE" onclick="addCE()"> Add C2 & EXFIL</button>
+        <button id="buttPER" onclick="addPER()"> Add Persist</button>
+        |
+        <button onclick="flipBackAddOn()"> Flip Add-On Cards</button>
+
+    <section class="expcards">
+        <div class="addons" id="addIC"></div>
+        <div class="addons" id="addPE"></div>
+        <div class="addons" id="addCE"></div>
+        <div class="addons" id="addPER"></div>
+    </section>
+  <br>
+</div>
+<!-- END EXPANSION ADDONS-->
 
 <!-- PROCEDURE CARDS -->
 <header>
@@ -227,7 +253,7 @@ Other Procedures:
 
         shuffle(proc);
         document.getElementById("output").innerHTML = proc.slice(0, 4).join("");
-        document.getElementById("remainder").innerHTML = proc.slice(4, 11).join("");
+        document.getElementById("remainder").innerHTML = proc.slice(4, 12).join("");
 
         shuffle(init);
         var init_id = init.slice(0,1);
@@ -275,6 +301,58 @@ Other Procedures:
               {u = 0; v = 1;}
         }
 
+        IC = 0
+        PE = 0
+        CE = 0
+        PER = 0
+
+        //EXPANSION SCENARIO ADD-ONS SCRIPTS
+        function addIC() {
+            IC++
+              document.getElementById("addIC").innerHTML += "<div class=\"cards__single_"+IC+"\"><div class=\"cards__front\"><img src=\"img/bb-back-init.png\"></div><div class=\"cards__back\"><div class=\"init\" id=\"w"+IC+"\">"+init.slice(IC,IC+1);+"</div></div></div>"
+              document.getElementById("w"+IC).innerHTML = init.slice(IC,IC+1);
+              if (IC == 2) {
+              buttIC.style.display = "none";
+             }
+              document.getElementById("solIC").innerHTML += init.slice(IC,IC+1);
+               const addoncards = document.querySelectorAll('[class^="cards__single_"]');
+              addoncards.forEach((addon) => addon.addEventListener("click", flipCard));
+            
+        }
+        function addPE() {
+            PE++
+              document.getElementById("addPE").innerHTML += "<div class=\"cards__single_"+PE+"\"><div class=\"cards__front\"><img src=\"img/bb-back-pivot.png\"></div><div class=\"cards__back\"><div class=\"init\" id=\"x"+PE+"\">"+pivot.slice(PE,PE+1);+"</div></div></div>"
+              document.getElementById("x"+PE).innerHTML = pivot.slice(PE,PE+1);
+              if (PE == 2) {
+              buttPE.style.display = "none";
+             }
+              document.getElementById("solPE").innerHTML += pivot.slice(PE,PE+1);
+              const addoncards = document.querySelectorAll('[class^="cards__single_"]');
+              addoncards.forEach((addon) => addon.addEventListener("click", flipCard));
+        }
+        function addCE() {
+            CE++
+              document.getElementById("addCE").innerHTML += "<div class=\"cards__single_"+CE+"\"><div class=\"cards__front\"><img src=\"img/bb-back-C2.png\"></div><div class=\"cards__back\"><div class=\"init\" id=\"y"+CE+"\">"+c2.slice(CE,CE+1);+"</div></div></div>"
+              document.getElementById("y"+CE).innerHTML = c2.slice(CE,CE+1);
+              if (CE == 2) {
+              buttCE.style.display = "none";
+             }
+              document.getElementById("solCE").innerHTML += c2.slice(CE,CE+1);
+              const addoncards = document.querySelectorAll('[class^="cards__single_"]');
+              addoncards.forEach((addon) => addon.addEventListener("click", flipCard));
+        }
+        function addPER() {
+            PER++
+              document.getElementById("addPER").innerHTML += "<div class=\"cards__single_"+PER+"\"><div class=\"cards__front\"><img src=\"img/bb-back-persist.png\"></div><div class=\"cards__back\"><div class=\"init\" id=\"z"+PER+"\">"+persist.slice(PER,PER+1);+"</div></div></div>"
+              document.getElementById("z"+PER).innerHTML = persist.slice(PER,PER+1);
+              if (PER == 2) {
+              buttPER.style.display = "none";
+             }
+              document.getElementById("solPER").innerHTML += persist.slice(PER,PER+1);
+              const addoncards = document.querySelectorAll('[class^="cards__single_"]');
+              addoncards.forEach((addon) => addon.addEventListener("click", flipCard));
+        }
+
     </script>
 
 <!-- INSERT RESET BUTTON -->
@@ -298,7 +376,7 @@ Other Procedures:
     <h1 tabindex="0" >GAME PROGRESS</h1></header></div>
           <span id="button"><input type="button" onclick="roll_dice(0)" value="Roll Dice"/></span>
           <span id="button2"><input type="button" onclick="roll_dice(3)" value="Roll Dice (+3)"/></span>
-          <span id="button3"></span>
+          <span id="button3"><button onClick='addturn()'>Add Extra Turn</button></span>
     <div class="dice" id="dice_box">
         <div id="dice">
 
@@ -365,6 +443,7 @@ Other Procedures:
 
 <script src="lightbox.js"></script>
 <script>
+  //DICE FUNCTIONS
       turn = 10
       fail = 0
       function roll_dice(m) {
@@ -395,9 +474,9 @@ Other Procedures:
                fail=0
                document.getElementById("fails").innerHTML = "";
               }
-              if(turn<=9) {
+              /*if(turn<=9) {
                 document.getElementById("button3").innerHTML = "<button onClick='addturn()''>Add Extra Turn</button></span>";
-              }
+              }*/
               if(turn==2) {
                 document.getElementById("turn").innerHTML = turn;
                 document.getElementById("turn_message").innerHTML = "WARNING";
@@ -424,6 +503,7 @@ Other Procedures:
               document.getElementById("d20").innerHTML = "ROLL VALUE: <br><div class='big_num'>" + roll + "</div>";
         }
 
+//TURN FUNCTIONS
       function addturn() {
         turn++;
         document.getElementById("dice").innerHTML = "";
@@ -459,7 +539,8 @@ Other Procedures:
       }
 </script>
 <script>
-      // Make the DIV element draggable:
+
+// Make the DIV element draggable:
 dragElement(document.getElementById("injectdiv"));
 dragElement(document.getElementById("consultantdiv"));
 dragElement(document.getElementById("mydiv"));
@@ -471,6 +552,7 @@ dragElement(document.getElementById("counter3"));
 dragElement(document.getElementById("hold1"));
 dragElement(document.getElementById("hold2"));
 dragElement(document.getElementById("hold3"));
+dragElement(document.getElementById("scenario"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -553,6 +635,26 @@ function injectstoggle() {
 
 function consultantstoggle() {
   var x = document.getElementById("consultantdiv");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+//EXPANSION TOGGLES
+
+function scenariotoggle() {
+  var x = document.getElementById("scenario");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function addonsolutiontoggle() {
+  var x = document.getElementById("dm_addonsolution");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
