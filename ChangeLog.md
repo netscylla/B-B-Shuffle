@@ -20,10 +20,13 @@
 - Added support for Add-On Scenario
   - Addressed complicated issue of "hacky" and "no good deed"
   - To activate, click the Add-On Scenario button on the DM Toolbar
-  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/dmcontrols--exp.png">
-  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-controls.png">
-  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-window.png">
-  - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-solution.png">
+    - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/dmcontrols--exp.png">
+  - This activates a floaty window
+    - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-window.png">
+  - Knock Yourself Out
+    - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-controls.png">
+  - There is also an Add-On Scenario Solution
+    - <img src="https://github.com/p3hndrx/B-B-Shuffle/blob/V2-Expansion/Screenshots/add-on-solution.png">
 
 # VERSION 2.0
 
