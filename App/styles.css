@@ -9,7 +9,7 @@ h1 {margin:30px 0 0 0;}
 #solution
 {
 z-index:99;
-position:absolute;
+position:fixed;
 bottom:0;
 right:0;
 background-color: #FFFFFF;
