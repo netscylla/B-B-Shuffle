@@ -243,7 +243,7 @@ Other Procedures:
     <h1 tabindex="0" >GAME PROGRESS</h1></header></div>
           <span id="button"><input type="button" onclick="roll_dice(0)" value="Roll Dice"/></span>
           <span id="button2"><input type="button" onclick="roll_dice(3)" value="Roll Dice (+3)"/></span>
-          <span id="button3"></span>
+          <span id="button3"><button onClick='addturn()'>Add Extra Turn</button></span>
     <div class="dice" id="dice_box">
         <div id="dice">
 
@@ -325,9 +325,9 @@ Other Procedures:
                fail=0
                document.getElementById("fails").innerHTML = "";
               }
-              if(turn<=9) {
+             /*if(turn<=9) {
                 document.getElementById("button3").innerHTML = "<button onClick='addturn()''>Add Extra Turn</button></span>";
-              }
+              }*/
               if(turn==2) {
                 document.getElementById("turn").innerHTML = turn;
                 document.getElementById("turn_message").innerHTML = "WARNING";
